@@ -1,0 +1,12 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "purchase": "Табака",
+      "price": 133.5,
+      "num": 1,
+      "img": "https://vkusnos.com/wp-content/uploads/2019/04/tcyplenok-tabaka-tarelka.png",
+      "allprice": 133.5
+    }
+  ]
+}

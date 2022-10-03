@@ -1,0 +1,83 @@
+<div class="panel">
+  <div class="form-inline mt-3 mx-auto d-flex flex-column align-items-end" style="width: 600px;">
+    <div class="form-group w-100">
+      <div class="col-md-full">
+        <label for="name">Называние продукта:</label>
+        <input type="text" name="name" class="form-control" [(ngModel)]="text" />
+      </div>
+    </div>
+    <div class="form-group mt-1  w-100">
+      <div class="col-md-full">
+        <label for="img">Картинка продукта:</label>
+        <input type="text" name="img" class="form-control" [(ngModel)]="img" />
+      </div>
+    </div>
+    <div class="form-group mt-1  w-100">
+      <div class="col-md-full">
+        <label for="price">Цена продукта:</label>
+        <input type="number" name="price" class="form-control" [(ngModel)]="price" />
+      </div>
+    </div>
+    <div class="form-group mt-1  w-100">
+      <div class="col-md-full">
+        <label for="number">Кол-во продукта:</label>
+        <input type="number" name="number" class="form-control" [(ngModel)]="num" />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-full mt-2">
+        <button *ngIf="add_button" class="btn btn-outline-primary add-btn"
+          (click)="addItem(text,price,img,num)">Добавить</button>
+        <button *ngIf="save_button" class="btn btn-outline-primary add-btn"
+          (click)="saveItem(text,price,img,num)">Сохранить</button>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr class="text-center">
+        <th>Предмет</th>
+        <th>Цена за 1ш</th>
+        <th>Кол-во</th>
+        <th>Общая цена</th>
+      </tr>
+    </thead>
+    <tbody class="">
+      <tr *ngFor="let item of list" class="text-center">
+        <td>{{item.purchase}}</td>
+        <td>{{item.price}} ₽</td>
+        <td>{{item.num}}</td>
+        <td>{{item.allprice}} ₽</td>
+        <td>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            (click)="items(item.purchase,item.price,item.img,item.num,item.id)">
+            Показать инфо
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">{{modalTitle}}</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img src={{modalImg}} alt="png" width="300px" />
+                </div>
+                Цена: {{modalPrice}} ₽
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                    (click)="editItem(modalTitle,modalPrice,modalImg,modalNum,modalId)">Редактировать</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteItem(item.id)">Удалить</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
