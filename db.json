@@ -2,11 +2,19 @@
   "list": [
     {
       "id": 1,
+      "purchase": " КокаКола 1л",
+      "price": 44,
+      "img": "https://pizzamarkoni.by/wp-content/uploads/2018/01/kola-1-litr.png",
+      "num": 2,
+      "allprice": 88
+    },
+    {
+      "id": 2,
       "purchase": "Табака",
-      "price": 133.5,
-      "num": 1,
-      "img": "https://vkusnos.com/wp-content/uploads/2019/04/tcyplenok-tabaka-tarelka.png",
-      "allprice": 133.5
+      "price": 132,
+      "img": "https://avatars.dzeninfra.ru/get-zen_doc/3614701/pub_5ef8c1658df0043de5972721_5ef8c1806624e262c74c60d4/scale_1200",
+      "num": 2,
+      "allprice": 264
     }
   ]
 }

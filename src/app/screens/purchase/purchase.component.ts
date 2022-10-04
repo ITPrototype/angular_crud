@@ -54,7 +54,7 @@ export class PurchaseComponent implements OnInit, OnDestroy {
     ) {
       this.crud.post(this.list.length + 1, text, price, img, num, price * num);
     } else {
-      alert('Пустая строка идиот!');
+      alert('Пустая строка или ошибка в заполнении формы!');
     }
     this.text = '';
     this.price = 0;
